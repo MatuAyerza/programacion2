@@ -25,9 +25,9 @@
                 <p>Genero: <a href="../genero/<%= bandaDetails[0].genero %>"><%= bandaDetails[0].genero %></a></p>
             <h2>Canciones más populares de <%= bandaDetails[0].nombre %> </h2>
                 <ol>
-                    <li><%= bandaDetails[0].topCanciones[0] %></li>
-                    <li><%= bandaDetails[0].topCanciones[1] %></li>
-                    <li><%= bandaDetails[0].topCanciones[2] %></li>
+                    <% bandaDetails[0].topCanciones.forEach(element => { %>
+                            <li><%= element %></li>
+                    <% }); %> 
                 </ol>
             <h2>Video</h2>
                 <iframe src="<%= bandaDetails[0].video %>" frameborder="0" height="315px" width="560px"></iframe>
