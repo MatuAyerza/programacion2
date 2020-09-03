@@ -120,4 +120,5 @@ const bandas = {
     },
 };
 //export
+
 module.exports = bandas;
