@@ -9,6 +9,9 @@
 <body>
     <%- include('./partials/header')%>
     <div class="bandasListWrapper">
+    <% if (generoList == "No hay bandas de ese género") { %> 
+        <h2>No hay bandas de ese género</h2>
+    <% } else { %> 
         <% generoList.forEach(element => { %>
             <a href="../id/<%= element.id %> ">
                 <div class="bandaContainer">
@@ -16,7 +19,7 @@
                     <img src="<%= element.cover %> " alt="<%= element.nombre %>" width="400px" height="300px">
                 </div>
             </a>
-        <% }); %>
+        <% });} %>
     </div>
     <%- include('./partials/footer') %>
 </body>

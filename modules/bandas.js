@@ -111,12 +111,11 @@ const bandas = {
                 resultados.push(element);
             }
         });
-//        if (resultados.length === 0) {
-//            return "No hay bandas de ese género";
-//        } else {
-//            return resultados;
-//        }
-        return resultados;
+       if (resultados.length === 0) {
+           return "No hay bandas de ese género";
+       } else {
+           return resultados;
+       }
     },
 };
 //export
