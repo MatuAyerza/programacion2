@@ -119,5 +119,5 @@ const bandas = {
         return resultados;
     },
 };
-
+//export
 module.exports = bandas;
