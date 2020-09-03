@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Detalles de <%= bandaDetails[0].nombre %> </title>
+</head>
+
+<body>
+    <%- include('./partials/header')%>
+    <div class="detailsContainer">
+        <img src="<%= bandaDetails[0].cover %>" class="bandImage" alt="">
+        <h2>Información General</h2>
+            <p>Integrantes: <%= bandaDetails[0].integrantes %></p>
+            <p>Genero: <a href="../genero/<%= bandaDetails[0].genero %>"><%= bandaDetails[0].genero %></a></p>
+        <h2>Canciones más populares de <%= bandaDetails[0].nombre %> </h2>
+            <ol>
+                <li><%= bandaDetails[0].topCanciones[0] %></li>
+                <li><%= bandaDetails[0].topCanciones[1] %></li>
+                <li><%= bandaDetails[0].topCanciones[2] %></li>
+            </ol>
+        <h2>Video</h2>
+            <iframe src="<%= bandaDetails[0].video %>" frameborder="0" height="315px" width="560px"></iframe>
+    </div>
+    <%- include('./partials/footer') %>
+</body>
+
+</html>

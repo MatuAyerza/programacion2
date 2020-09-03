@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <%- include('./partials/header') %>
+    <div class="bandasListWrapper">
+        <% listaBandas.forEach(element => { %>
+            <a href="../bandas/id/<%= element.id %> ">
+                <div class="bandaContainer">
+                    <h2><%= element.nombre %> </h2>
+                    <img src="<%= element.cover %> " alt="<%= element.nombre %>" width="400px" height="300px">
+                </div>
+            </a>
+        <% }); %>    
+    </div>
+   <%- include('./partials/footer') %> 
+</body>
+</html>
