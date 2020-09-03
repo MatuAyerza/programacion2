@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>Detalles de <%= bandaDetails[0].nombre %> </title>
+    <title>
+        <% if (bandaDetails == "No hay una banda con ese id") { %>
+            ERROR: ID no encontrado
+        <% } else { %>
+            Detalles de <%= bandaDetails[0].nombre %>
+        <% } %>
+    </title>
 </head>
 
 <body>
     <%- include('./partials/header')%>
     <div class="detailsContainer">
         <% if (bandaDetails == "No hay una banda con ese id") { %>
-            <h2>No hay una banda con ese id</h2>
+            <h2 style="text-align: center;">No hay una banda con ese ID, F en el chat</h2>
         <% } else { %>
             <img src="<%= bandaDetails[0].cover %>" class="bandImage" alt="">
             <h2>Información General</h2>

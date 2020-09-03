@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>Lista de Bandas de <%= generoList[0].genero %> </title>
+    <title>
+    <% if (generoList == "No hay bandas de ese género") { %>
+    ERROR: Genero no encontrado
+    <% } else { %>
+    Lista de Bandas de <%= generoList[0].genero %>
+    <% } %> </title>
 </head>
 <body>
     <%- include('./partials/header')%>
