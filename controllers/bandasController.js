@@ -1,7 +1,7 @@
 let listaBandas = require('../modules/bandas');
 const controller = {
     index: (req, res) => {
-        return res.render('listadoBandas', {listaBandas: listaBandas.lista, title: 'Lista de Bandas'});
+        return res.render('listadoBandas', {listaBandas: listaBandas.lista, title: 'The Band Database'});
     },
     id: (req, res) => {
         let idBanda = req.params.id

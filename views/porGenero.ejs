@@ -13,19 +13,21 @@
 </head>
 <body>
     <%- include('./partials/header')%>
-    <div class="bandasListWrapper">
-    <% if (generoList == "No hay bandas de ese género") { %> 
-        <h2>No hay bandas de ese género, F en el chat</h2>
-    <% } else { %> 
-        <% generoList.forEach(element => { %>
-            <div class="bandaContainer">
-                <a href="../id/<%= element.id %> ">
-                    <h2><%= element.nombre %> </h2>
-                    <img src="<%= element.cover %> " alt="<%= element.nombre %>" width="400px" height="300px">
-                </a>
-            </div>
-        <% });} %>
+    <div class="contentWrapper">
+        <div class="bandasListWrapper">
+        <% if (generoList == "No hay bandas de ese género") { %> 
+            <h2>No hay bandas de ese género, F en el chat</h2>
+        <% } else { %> 
+            <% generoList.forEach(element => { %>
+                <div class="bandaContainer">
+                    <a href="../id/<%= element.id %> ">
+                        <h2><%= element.nombre %> </h2>
+                        <img src="<%= element.cover %> " alt="<%= element.nombre %>" width="400px" height="300px">
+                    </a>
+                </div>
+            <% });} %>
+        </div>
     </div>
-    <%- include('./partials/footer') %>
+    <div class="footerGeneros"><%- include('./partials/footer') %></div>
 </body>
 </html>
