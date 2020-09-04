@@ -15,15 +15,15 @@
     <%- include('./partials/header')%>
     <div class="bandasListWrapper">
     <% if (generoList == "No hay bandas de ese género") { %> 
-        <h2>No hay bandas de ese género</h2>
+        <h2>No hay bandas de ese género, F en el chat</h2>
     <% } else { %> 
         <% generoList.forEach(element => { %>
-            <a href="../id/<%= element.id %> ">
-                <div class="bandaContainer">
+            <div class="bandaContainer">
+                <a href="../id/<%= element.id %> ">
                     <h2><%= element.nombre %> </h2>
                     <img src="<%= element.cover %> " alt="<%= element.nombre %>" width="400px" height="300px">
-                </div>
-            </a>
+                </a>
+            </div>
         <% });} %>
     </div>
     <%- include('./partials/footer') %>

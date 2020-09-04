@@ -6,7 +6,7 @@ const controller = {
     id: (req, res) => {
         let idBanda = req.params.id
         bandaDetails = listaBandas.getBandaDetails(idBanda)
-        return res.render('detalleBanda', {bandaDetails: bandaDetails, title: 'Detalles de la banda '+ bandaDetails[0].nombre});
+        return res.render('detalleBanda', {bandaDetails: bandaDetails, title: 'Detalles de '+ bandaDetails[0].nombre, bandasSimilares: listaBandas.porGenero(bandaDetails[0].genero)});
     },
     genero: (req, res) => {
         let generoSelected = req.params.genero

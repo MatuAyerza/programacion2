@@ -7,8 +7,10 @@
     <title>
         <% if (bandaDetails == "No hay una banda con ese id") { %>
             ERROR: ID no encontrado
-        <% } else { %>
+        <% } else if (bandaDetails[0].integrantes != 1) { %>
             Detalles de <%= bandaDetails[0].nombre %>
+        <% } else { %>
+            Detalles del artista <%= bandaDetails[0].nombre %>
         <% } %>
     </title>
 </head>
@@ -22,7 +24,7 @@
             <img src="<%= bandaDetails[0].cover %>" class="bandImage" alt="">
             <h2>Información General</h2>
                 <p>Integrantes: <%= bandaDetails[0].integrantes %></p>
-                <p>Genero: <a href="../genero/<%= bandaDetails[0].genero %>"><%= bandaDetails[0].genero %></a></p>
+                <p>Género: <a class="linkGenero" href="../genero/<%= bandaDetails[0].genero %>"><%= bandaDetails[0].genero %></a></p>
             <h2>Canciones más populares de <%= bandaDetails[0].nombre %> </h2>
                 <ol>
                     <% bandaDetails[0].topCanciones.forEach(element => { %>
@@ -31,6 +33,17 @@
                 </ol>
             <h2>Video</h2>
                 <iframe src="<%= bandaDetails[0].video %>" frameborder="0" height="315px" width="560px"></iframe>
+            <h2>Artistas Similares</h2>
+            <% bandasSimilares.forEach(element => { %>
+                <% if (element.id !== bandaDetails[0].id) { %>
+                <div class="bandaContainer">
+                    <a href="../id/<%= element.id %> ">
+                        <h2><%= element.nombre %> </h2>
+                        <img src="<%= element.cover %> " alt="<%= element.nombre %>" width="400px" height="300px">
+                    </a>
+                </div>
+                <% } %>
+            <% }); %>
         <% } %> 
     </div>
     <%- include('./partials/footer') %>

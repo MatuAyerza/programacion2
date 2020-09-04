@@ -41,7 +41,7 @@ header h1 {
   background: lightblue;
 }
 
-.bandaContainer {
+.bandaContainer a {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -50,6 +50,7 @@ header h1 {
   border: 1px solid black;
   margin: 5px;
   background: teal;
+  max-width: 400px;
 }
 
 .bandImage {
@@ -62,4 +63,9 @@ header h1 {
   padding-bottom: 20px;
   background: lightblue;
   padding-left: 25px;
+}
+
+.linkGenero {
+  text-decoration: underline;
+  color: teal;
 }
